@@ -16,7 +16,7 @@ func offsetRune(char rune) int {
 	return 0
 }
 
-func RucksackReorganizationCompartment(input io.Reader) int {
+func RucksackReorganizationPart1(input io.Reader) int {
 	scanner := bufio.NewScanner(input)
 	scanner.Split(bufio.ScanLines)
 
@@ -37,7 +37,7 @@ func RucksackReorganizationCompartment(input io.Reader) int {
 	return sum
 }
 
-func RucksackReorganizationBadges(input io.Reader) int {
+func RucksackReorganizationPart2(input io.Reader) int {
 	scanner := bufio.NewScanner(input)
 	scanner.Split(bufio.ScanLines)
 

@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func HowMuchCaloriesHasTheTopElf(reader io.Reader) uint {
+func CalorieCountingPart1(reader io.Reader) uint {
 	scanner := bufio.NewScanner(reader)
 	scanner.Split(bufio.ScanLines)
 
@@ -32,7 +32,7 @@ func HowMuchCaloriesHasTheTopElf(reader io.Reader) uint {
 	return maxCalories
 }
 
-func HowMuchCaloriesHaveTheTopThreeElves(reader io.Reader) uint {
+func CalorieCountingPart2(reader io.Reader) uint {
 	scanner := bufio.NewScanner(reader)
 	scanner.Split(bufio.ScanLines)
 

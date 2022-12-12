@@ -114,5 +114,5 @@ func CathodeRayTubePart2(input io.Reader) string {
 		totalCycles++
 	}
 
-	return crt
+	return crt[:len(crt)-1]
 }

@@ -111,7 +111,7 @@ func (result Result) choosePlay(opponent Option) Option {
 	return 0
 }
 
-func TotalScoreWithElfStrategy(input io.Reader) int {
+func RockPaperScissorsPart1(input io.Reader) int {
 	scanner := bufio.NewScanner(input)
 	scanner.Split(bufio.ScanLines)
 
@@ -134,7 +134,7 @@ func TotalScoreWithElfStrategy(input io.Reader) int {
 	return sum
 }
 
-func TotalScoreWithElfStrategyWinLose(input io.Reader) int {
+func RockPaperScissorsPart2(input io.Reader) int {
 	scanner := bufio.NewScanner(input)
 	scanner.Split(bufio.ScanLines)
 

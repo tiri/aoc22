@@ -1,25 +1,15 @@
 package aoc22
 
 import (
-	"io"
-	"strconv"
 	"testing"
 )
 
 func TestDay08Part1(t *testing.T) {
-	testFunc := func(input io.Reader) string {
-		got := TreetopTreeHousePart1(input)
-		return strconv.Itoa(got)
-	}
-	GoldenTest(t, "08_1_known.golden", testFunc)
-	GoldenTest(t, "08_1_challenge.golden", testFunc)
+	RunTest(t, "08_known.txt", TreetopTreeHousePart1, 21)
+	RunTest(t, "08_challenge.txt", TreetopTreeHousePart1, 1690)
 }
 
 func TestDay08Part2(t *testing.T) {
-	testFunc := func(input io.Reader) string {
-		got := TreetopTreeHousePart2(input)
-		return strconv.Itoa(got)
-	}
-	GoldenTest(t, "08_2_known.golden", testFunc)
-	GoldenTest(t, "08_2_challenge.golden", testFunc)
+	RunTest(t, "08_known.txt", TreetopTreeHousePart2, 8)
+	RunTest(t, "08_challenge.txt", TreetopTreeHousePart2, 535680)
 }

@@ -8,10 +8,8 @@ import (
 	"testing"
 )
 
-const testDataFolder = "testdata"
-
 func RunTest[T comparable](t *testing.T, testFile string, f func(io.Reader) T, want T) {
-	path := filepath.Join(testDataFolder, testFile)
+	path := filepath.Join(testFile)
 	_, filename := filepath.Split(path)
 	testName := filename[:len(filename)-len(filepath.Ext(path))]
 

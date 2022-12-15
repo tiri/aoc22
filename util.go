@@ -27,6 +27,25 @@ func RunTest[T comparable](t *testing.T, testFile string, f func(io.Reader) T, w
 	})
 }
 
+func RunTestWithParam[T comparable](t *testing.T, testFile string, f func(io.Reader, T) T, param T, want T) {
+	path := filepath.Join(testFile)
+	_, filename := filepath.Split(path)
+	testName := filename[:len(filename)-len(filepath.Ext(path))]
+
+	reader, err := os.Open(path)
+	if err != nil {
+		t.Fatal("error reading file:", err)
+	}
+
+	t.Run(testName, func(t *testing.T) {
+		got := f(reader, param)
+
+		if got != want {
+			t.Errorf("\n==== got:\n%v\n==== want:\n%v\n", got, want)
+		}
+	})
+}
+
 func RunBenchmark[T comparable](b *testing.B, testFile string, f func(io.Reader) T) {
 	path := filepath.Join(testFile)
 	_, filename := filepath.Split(path)
@@ -60,4 +79,11 @@ func SplitAtEmptyRow(data []byte, atEOF bool) (advance int, token []byte, err er
 	}
 
 	return
+}
+
+func Abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
 }

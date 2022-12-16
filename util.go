@@ -87,3 +87,10 @@ func Abs(x int) int {
 	}
 	return x
 }
+
+func Min(x int, y int) int {
+	if x < y {
+		return x
+	}
+	return y
+}
